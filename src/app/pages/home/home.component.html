@@ -1,0 +1,15 @@
+<div>
+  <div>
+    <mat-grid-list rowHeight="375" *ngIf="playlist" cols="3">
+      <mat-grid-tile *ngFor="let video of playlist.items">
+        <app-video-card
+          [video]="video"
+          (id)="playVideo($event)"
+        ></app-video-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <div>
+    <button (click)="load()" mat-button color="accent">Cargar más</button>
+  </div>
+</div>

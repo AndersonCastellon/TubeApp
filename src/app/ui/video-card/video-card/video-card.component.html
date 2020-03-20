@@ -1,0 +1,22 @@
+<mat-card class="card" *ngIf="video.title">
+  <img
+    *ngIf="video.thumbnails"
+    mat-card-image
+    [src]="video.thumbnails | getThumbnailUrl"
+    [alt]="video.title"
+  />
+  <img
+    *ngIf="!video.thumbnails"
+    mat-card-image
+    src="../../../../assets/img//img-not-available.png"
+    [alt]="video.title"
+  />
+  <mat-card-content>
+    <p class="card-title">{{ video.title }}</p>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button (click)="id.emit(video.videoId)" mat-button color="primary">
+      REPRODUCIR
+    </button>
+  </mat-card-actions>
+</mat-card>
